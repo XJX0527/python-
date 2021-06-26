@@ -1,0 +1,38 @@
+更新：Anaconda 
+管理员模式打开：Anaconda Prompt 输入conda update conda 在提示是否更新时选择y
+
+创建环境：Anaconda默认环境是base
+创建一个新环境：管理员模式打开：Anaconda Prompt输入conda create -n env_name package_names（env_name：环境名称，package_names：安装的包的名称）
+eg.conda create -n xjx python=3 numpy pandas=0.24.0  （环境名称：xjx，在该环境中安装python3中最新的python，安装包pandas0.24.0版本）
+conda activate my_env（进入环境my_env）
+conda info（查看该环境下所有信息）
+conda list（查看该环境下的包）
+python -version（查看当前环境下的python版本）
+python（查看当前环境下的python版本）
+conda deactivate（离开当前环境）
+conda env remove -n env_name(删除环境）
+conda env list（列出所有环境名称）
+conda install -help（了解install语句的应用）
+
+如何和团队成员进行环境共享：拥有者李四想让张三共享环境
+conda env export > environment.yaml（李四：导出环境文件（yaml）当前的环境配置（包括python版本和此环境下所有的包）保存到yaml文件中）
+activate py3（张三：先进入某个环境）
+conda env update -f=/path/to/environment.yml（-f=/path/to/environment.yml：使用的环境文件在本地的路径）
+
+管理包：
+1.安装包
+conda search requests（搜素requests包是否存在以及版本）
+conda install requests（安装requests包，默认最新版本）
+conda install -c conda -forge pandas（如果找不到想要安装的包，利用社区conda -forge进行安装）（利用社区conda -forge安装pandas）
+pip insatll tushare（若以上方法均不可，利用pip install语句安装tushare包）
+
+2.更新包
+conda uninstall packages_name（卸载该环境下的包）
+conda uninstall my_env packages_name（在该环境下卸载另一环境下的包）
+conda update -all（更新该环境下的所有包）
+conda update my_env packages_name（对该环境下的该包进行更新）
+
+conda create -n xjx
+conda activate xjx
+conda env list
+conda install scipy numpy statsmodels pandas scikit -learn matplotlib seaborn ipython jupyter 
