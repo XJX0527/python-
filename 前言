@@ -1,0 +1,59 @@
+数据分析类型：
+1.描述性分析：发生了什么
+2.预测性分析：将要发生什么
+3.指导性分析：最优决策
+数据分析方法：
+1.描述性数据分析：利用统计方法对数据的数量特征及分布规律进行测定和描述
+2.验证性数据分析：对已有模型或假设进行验证
+3.探索性数据分析：发现数据中的新特征或者隐藏信息（EDA）
+
+数据分析的基本流程：
+问题定义==>收集数据==>数据处理==>分析数据==>结果解读于应用==>问题定义（是个闭环）
+数据处理包括：数据清洗、数据转化、数据抽取、数据合并、数据计算等
+分析数据时一般是选取几种数据分析方法进行反复的分析
+结果展示时最好用图表进行展示、数据报告、数据结论
+
+假设是根据提出的问题进行假设（假设多个原因），与实际相联系
+假设要满足的条件：1.涉及一个自变量和一个因变量；2.是可测试的；3.是可证伪的。
+
+更新：Anaconda 
+管理员模式打开：Anaconda Prompt 输入conda update conda 在提示是否更新时选择y
+
+创建环境：Anaconda默认环境是base
+创建一个新环境：管理员模式打开：Anaconda Prompt输入conda create -n env_name package_names（env_name：环境名称，package_names：安装的包的名称）
+eg.conda create -n xjx python=3 numpy pandas=0.24.0  （环境名称：xjx，在该环境中安装python3中最新的python，安装包pandas0.24.0版本）
+conda activate my_env（进入环境my_env）
+conda info（查看该环境下所有信息）
+conda list（查看该环境下的包）
+python -version（查看当前环境下的python版本）
+python（查看当前环境下的python版本）
+conda deactivate（离开当前环境）
+conda env remove -n env_name(删除环境）
+conda env list（列出所有环境名称）
+conda install -help（了解install语句的应用）
+
+如何和团队成员进行环境共享：拥有者李四想让张三共享环境
+conda env export > environment.yaml（李四：导出环境文件（yaml）当前的环境配置（包括python版本和此环境下所有的包）保存到yaml文件中）
+activate py3（张三：先进入某个环境）
+conda env update -f=/path/to/environment.yml（-f=/path/to/environment.yml：使用的环境文件在本地的路径）
+
+管理包：
+1.安装包
+conda search requests（搜素requests包是否存在以及版本）
+conda install requests（安装requests包，默认最新版本）
+conda install -c conda -forge pandas（如果找不到想要安装的包，利用社区conda -forge进行安装）（利用社区conda -forge安装pandas）
+pip insatll tushare（若以上方法均不可，利用pip install语句安装tushare包）
+
+2.更新包
+conda uninstall packages_name（卸载该环境下的包）
+conda uninstall my_env packages_name（在该环境下卸载另一环境下的包）
+conda update -all（更新该环境下的所有包）
+conda update my_env packages_name（对该环境下的该包进行更新）
+
+conda create -n xjx
+conda activate xjx
+conda env list
+conda install scipy numpy statsmodels pandas scikit -learn matplotlib seaborn ipython jupyter 
+
+
+
